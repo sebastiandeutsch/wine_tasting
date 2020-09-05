@@ -1,0 +1,22 @@
+<h1><%= @product.name %></h1>
+
+<p>
+  <%= @product.description %>
+</p>
+
+<h2>Kommentare</h2>
+
+<ul>
+  <% @product.comments.each do |comment| %>
+    <li>
+      <%= comment.name %>: <%= comment.text %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Kommentar schreiben</h3>
+<%= form_for [@product, @product.comments.new] do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :text %>
+  <%= f.submit %>
+<% end %>

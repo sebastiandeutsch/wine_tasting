@@ -1,0 +1,21 @@
+<%= form_for @product do |f| %>
+  <% if @product.errors.any? %>
+    <ul>
+      <% @product.errors.each do |error, msg| %>
+        <li>
+          <%= error %>
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

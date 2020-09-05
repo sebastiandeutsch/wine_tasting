@@ -1,0 +1,13 @@
+<h1>Alle Weine</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <h2>
+        <%= link_to product.name, product_path(product) %>
+        <%= link_to "[edit]", edit_product_path(product) %>
+        <%= link_to "[delete]", product_path(product), method: "delete", data: { confirm: "Möchtest du das Produkt wirklich löschen?" } %>
+      </h2>
+    </li>
+  <% end %>
+</ul>

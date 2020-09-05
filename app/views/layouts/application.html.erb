@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="<%= type %>">
+        <%= msg %>
+      </div>
+    <% end %>
+    <nav>
+      <%= link_to 'Wein anlegen', new_product_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>
